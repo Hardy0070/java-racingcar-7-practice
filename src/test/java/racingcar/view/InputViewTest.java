@@ -10,7 +10,9 @@ import racingcar.Car;
 class InputViewTest {
 
     InputView inputView = new InputView();
+    OutputView outputView = new OutputView();
     ViewController viewController = new ViewController();
+
 
     @DisplayName("자동차 이름이 5글자 이하일 때 정상적으로 반환한다.")
     @Test
@@ -37,7 +39,7 @@ class InputViewTest {
     void printCarNameAndLocation() {
         Car myCar = new Car("hardy", 0, false);
         myCar.getMoveOrStopVoid();
-        viewController.printCarLocation(myCar);
+        outputView.printCarLocation(myCar);
     }
 
 }

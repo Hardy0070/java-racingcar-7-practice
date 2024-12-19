@@ -25,18 +25,4 @@ public class ViewController {
         return input.readRaceNumber();
     }
 
-    public void printCarLocation(Car car) {
-        output.printMessage(car.getCarName() + " : " + convertMoveCount(car.getMoveCount()));
-    }
-
-    public String convertMoveCount(int moveCount) {
-        String carLocation = "";
-
-        for (int i = 0; i < moveCount; i++) {
-            carLocation += "-";
-        }
-
-        return carLocation;
-     }
-
 }
