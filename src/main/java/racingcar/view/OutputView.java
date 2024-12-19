@@ -7,6 +7,9 @@ import racingcar.Car;
 //책임: 프로그램이 처리한 결과나 메시지를 화면 또는 다른 출력 장치에 출력한다.
 public class OutputView {
 
+    public OutputView() {
+    }
+
     public void printMessage(String message) {
         System.out.println(message);
     }
