@@ -8,9 +8,6 @@ public class Car {
     private int moveCount;
     private boolean winnerCheck;
 
-    public Car() {
-    }
-
     public Car(String carName, int moveCount, boolean winnerCheck) {
         this.carName = carName;
         this.moveCount = moveCount;
@@ -30,17 +27,6 @@ public class Car {
         if (randomNumber > 3) {
             moveCount++;
         }
-    }
-
-    // carLocation에 moveCount 갯수만큼 -를 추가한다.
-    public String convertMoveCount(int moveCount) {
-        String carLocation = "";
-
-        for (int i = 0; i < moveCount; i++) {
-            carLocation += "-";
-        }
-
-        return carLocation;
     }
 
 }
