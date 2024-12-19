@@ -1,5 +1,8 @@
 package racingcar;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //Car 객체
 //역할: 무작위 값에 따라 전진할 수 있어야 한다.
 public class Car {
@@ -9,7 +12,7 @@ public class Car {
     private boolean winnerCheck;
 
     public Car(String carName, int moveCount, boolean winnerCheck) {
-        this.carName = carName;
+        this.carName = validate(carName);
         this.moveCount = moveCount;
         this.winnerCheck = winnerCheck;
     }
@@ -27,6 +30,13 @@ public class Car {
         if (randomNumber > 3) {
             moveCount++;
         }
+    }
+
+    private String validate(String carName) {
+        if (carName == "" || carName.length() > 5) {
+            throw new IllegalArgumentException("자동차 이름은 5글자 이하로 입력해주세요.");
+        }
+        return carName;
     }
 
 }

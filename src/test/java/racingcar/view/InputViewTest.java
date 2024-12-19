@@ -16,7 +16,7 @@ class InputViewTest {
     @Test
     void validateCarNameLength() {
 
-        List<String> validatedCarNames = inputView.validateCarNames("poni, heaby, kate");
+        List<String> validatedCarNames = inputView.separatedCarNames("poni, heaby, kate");
 
         assertThat(validatedCarNames).containsExactly("poni", "heaby", "kate");
     }
@@ -27,7 +27,7 @@ class InputViewTest {
 
         String containOver5 = ("poni, heabyy, kate");
 
-        assertThatThrownBy(() -> inputView.validateCarNames(containOver5))
+        assertThatThrownBy(() -> inputView.separatedCarNames(containOver5))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("자동차 이름은 5글자 이하로 입력해주세요.");
     }

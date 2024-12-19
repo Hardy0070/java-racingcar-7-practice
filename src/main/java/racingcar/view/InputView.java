@@ -32,15 +32,14 @@ public class InputView {
         return carNameAfterTrim;
     }
 
-    public List<String> validateCarNames(String carNames) {
-        List<String> validatedCarNames = new ArrayList<>();
+    public List<String> separatedCarNames(String carNames) {
+        List<String> separatedCarNames = new ArrayList<>();
 
         String[] splitCarNames = spiltCarNames(carNames);
         for (String splitCarName : splitCarNames) {
-            validatedCarNames.add(removeSpaceLetter(splitCarName));
+            separatedCarNames.add(removeSpaceLetter(splitCarName));
         }
 
-        return validatedCarNames;
+        return separatedCarNames;
     }
-
 }
