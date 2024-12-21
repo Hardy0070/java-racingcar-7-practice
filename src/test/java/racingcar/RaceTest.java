@@ -12,7 +12,7 @@ class RaceTest {
     void printCarName() {
         Race race = new Race();
 
-        race.oneRace();
+        race.start();
     }
 
 }
