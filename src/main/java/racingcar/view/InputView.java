@@ -20,26 +20,4 @@ public class InputView {
         return scanner.nextInt();
     }
 
-    private String[] spiltCarNames(String carNames) {
-        return carNames.split(",");
-    }
-
-    private String removeSpaceLetter(String carName) {
-        String carNameAfterTrim = carName.trim();
-        if (carNameAfterTrim.length() > 5) {
-            throw new IllegalArgumentException("자동차 이름은 5글자 이하로 입력해주세요.");
-        }
-        return carNameAfterTrim;
-    }
-
-    public List<String> separatedCarNames(String carNames) {
-        List<String> separatedCarNames = new ArrayList<>();
-
-        String[] splitCarNames = spiltCarNames(carNames);
-        for (String splitCarName : splitCarNames) {
-            separatedCarNames.add(removeSpaceLetter(splitCarName));
-        }
-
-        return separatedCarNames;
-    }
 }
