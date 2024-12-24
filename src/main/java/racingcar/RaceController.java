@@ -8,28 +8,27 @@ import racingcar.view.ViewController;
 
 public class RaceController {
 
-    private InputView inputView = new InputView();
     private OutputView outputView = new OutputView();
     private ViewController viewController = new ViewController();
 
     public void racingStart() {
-        String initialCarNames = viewController.initialCarNames();
-        List<String> carNames = viewController.separatedCarNames(initialCarNames);
-        List<Car> racingCars = getRacingCar(carNames);
+        List<Car> racingCars = createRacingCar(findCarNames());
 
-        int raceNumber = viewController.getRaceNumber();
+        outputView.printRacingResult(viewController.getRaceNumber(), racingCars);
 
-        outputView.printRacingResult(raceNumber, racingCars);
+        int maxNumber = findMaxNumber(racingCars);
 
-        int maxNumber = getMaxNumber(racingCars);
-
-        String winnerCars = getWinnerCars(racingCars, maxNumber);
+        String winnerCars = findWinnerCars(racingCars, maxNumber);
 
         outputView.printWinnerCars(winnerCars);
     }
 
+    public List<String> findCarNames() {
+        return viewController.separatedCarNames(viewController.initialCarNames());
+    }
 
-    public String getWinnerCars(List<Car> racingCars, int maxNumber) {
+
+    public String findWinnerCars(List<Car> racingCars, int maxNumber) {
         String winnerCars = "";
 
         for (Car racingCar : racingCars) {
@@ -40,7 +39,7 @@ public class RaceController {
         return winnerCars;
     }
 
-    public int getMaxNumber(List<Car> racingCars) {
+    public int findMaxNumber(List<Car> racingCars) {
         int maxNumber = 0;
 
         for (Car racingCar : racingCars) {
@@ -51,7 +50,7 @@ public class RaceController {
         return maxNumber;
     }
 
-    public List<Car> getRacingCar(List<String> carNames) {
+    public List<Car> createRacingCar(List<String> carNames) {
         List<Car> racingCars = new ArrayList<>();
 
         for (String name : carNames) {
