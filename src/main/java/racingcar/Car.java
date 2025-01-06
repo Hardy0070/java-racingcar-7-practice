@@ -1,20 +1,13 @@
 package racingcar;
 
-import java.util.ArrayList;
-import java.util.List;
-
-//Car 객체
-//역할: 무작위 값에 따라 전진할 수 있어야 한다.
 public class Car {
 
     private String carName;
     private int moveCount;
-    private boolean winnerCheck;
 
-    public Car(String carName, int moveCount, boolean winnerCheck) {
+    public Car(String carName, int moveCount) {
         this.carName = validate(carName);
         this.moveCount = moveCount;
-        this.winnerCheck = winnerCheck;
     }
 
     public String getCarName() {

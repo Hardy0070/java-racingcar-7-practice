@@ -4,11 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import racingcar.Car;
 
-//역할: Input객체와 Output객체의 협력을 잇는다.
-//책임:
-//- Input 객체를 통해 입력값 수집
-//- 필요한 로직 실행
-//- 결과를 Output 객체에 전달
 public class ViewController {
 
     private final InputView input = new InputView();
@@ -31,10 +26,6 @@ public class ViewController {
         }
 
         return separatedCarNames;
-    }
-
-    public List<String> getCarNames() {
-        return separatedCarNames(initialCarNames());
     }
 
     public int getRaceNumber() {

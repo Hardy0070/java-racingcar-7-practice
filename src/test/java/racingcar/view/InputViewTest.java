@@ -9,7 +9,6 @@ import racingcar.Car;
 
 class InputViewTest {
 
-    InputView inputView = new InputView();
     OutputView outputView = new OutputView();
     ViewController viewController = new ViewController();
 
@@ -32,14 +31,6 @@ class InputViewTest {
         assertThatThrownBy(() -> viewController.separatedCarNames(containOver5))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("자동차 이름은 5글자 이하로 입력해주세요.");
-    }
-
-    @DisplayName("자동차 이름과 무작위 값에 따른 이동 출력")
-    @Test
-    void printCarNameAndLocation() {
-        Car myCar = new Car("hardy", 0, false);
-        myCar.getMoveOrStopVoid();
-        outputView.printCarLocation(myCar);
     }
 
 }
