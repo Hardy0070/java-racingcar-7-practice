@@ -22,7 +22,7 @@ public class ViewController {
 
         String[] splitCarNames = spiltCarNames(initialCarNames);
         for (String splitCarName : splitCarNames) {
-            separatedCarNames.add(removeSpaceLetter(splitCarName));
+            separatedCarNames.add(splitCarName.trim());
         }
 
         return separatedCarNames;
@@ -31,14 +31,6 @@ public class ViewController {
     public int getRaceNumber() {
         output.printMessage("시도할 횟수는 몇 회인가요?");
         return input.readRaceNumber();
-    }
-
-    private String removeSpaceLetter(String carName) {
-        String carNameAfterTrim = carName.trim();
-        if (carNameAfterTrim.length() > 5) {
-            throw new IllegalArgumentException("자동차 이름은 5글자 이하로 입력해주세요.");
-        }
-        return carNameAfterTrim;
     }
 
     private String[] spiltCarNames(String carNames) {
